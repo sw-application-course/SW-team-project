@@ -6,11 +6,7 @@ def getData(filename):
   global header
   global traffic_list
   line_counter = 0
-  exDate = 0
-  exCarType = 0
-  exRoadName = ""
-  exSecNum = 0
-  exDir = ""
+
 
   with open(filename) as f:
     while 1:
