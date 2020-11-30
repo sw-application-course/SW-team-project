@@ -1,3 +1,7 @@
+body{background: url("./background.png") no-repeat center center fixed; 
+  background-repeat:no-repeat;
+  background-size:100% 100%;}
+
 #title{
   font-weight: bold;
   font-size: 55px;
@@ -5,7 +9,13 @@
   text-decoration: none;
   font-family: "Times New Roman";
   text-align: center;
-  margin:37% 
+  margin:35% 
+}
+
+#title2{
+  font-family: "Times New Roman";
+  text-align: center;
+  font-color: #2E2E2E;
 }
 #highway{
   color: #255e97;
@@ -66,6 +76,7 @@ form{
 	text-decoration: none;
 	border-radius: 4px;
   padding: 10px 30px;
+  font-family: "Times New Roman";
 }
 
 #calbutton.button {

@@ -1,5 +1,69 @@
 $(document).ready(function (){
   function getFile() {
+    //9월
+    fileName.push('./data/TCS_67_04_01_156407.csv');
+    fileName.push('./data/TCS_67_04_01_168187.csv');
+    fileName.push('./data/TCS_67_04_01_281472.csv');
+    fileName.push('./data/TCS_67_04_01_309396.csv');
+    fileName.push('./data/TCS_67_04_01_311166.csv');
+    fileName.push('./data/TCS_67_04_01_333201.csv');
+    fileName.push('./data/TCS_67_04_01_338297.csv');
+    fileName.push('./data/TCS_67_04_01_410870.csv');
+    fileName.push('./data/TCS_67_04_01_441541.csv');
+    fileName.push('./data/TCS_67_04_01_444105.csv');
+    fileName.push('./data/TCS_67_04_01_472823.csv');
+    fileName.push('./data/TCS_67_04_01_501907.csv');
+    fileName.push('./data/TCS_67_04_01_504898.csv');
+    fileName.push('./data/TCS_67_04_01_563463.csv');
+    fileName.push('./data/TCS_67_04_01_567033.csv');
+    fileName.push('./data/TCS_67_04_01_602618.csv');
+    fileName.push('./data/TCS_67_04_01_612475.csv');
+    fileName.push('./data/TCS_67_04_01_635273.csv');
+    fileName.push('./data/TCS_67_04_01_662434.csv');
+    fileName.push('./data/TCS_67_04_01_729636.csv');
+    fileName.push('./data/TCS_67_04_01_766411.csv');
+    fileName.push('./data/TCS_67_04_01_800256.csv');
+    fileName.push('./data/TCS_67_04_01_814844.csv');
+    fileName.push('./data/TCS_67_04_01_860438.csv');
+    fileName.push('./data/TCS_67_04_01_889156.csv');
+    fileName.push('./data/TCS_67_04_01_900753.csv');
+    fileName.push('./data/TCS_67_04_01_918851.csv');
+    fileName.push('./data/TCS_67_04_01_953856.csv');
+    fileName.push('./data/TCS_67_04_01_978240.csv');
+    fileName.push('./data/TCS_67_04_01_988097.csv');
+
+    //10월 (1일, 21일 데이터없음)
+    fileName.push('./data/TCS_67_04_01_694479.csv')
+    fileName.push('./data/TCS_67_04_01_600878.csv')
+    fileName.push('./data/TCS_67_04_01_851832.csv')
+    fileName.push('./data/TCS_67_04_01_280312.csv')
+    fileName.push('./data/TCS_67_04_01_524155.csv')
+    fileName.push('./data/.csvTCS_67_04_01_317270')
+    fileName.push('./data/TCS_67_04_01_681508.csv')
+    fileName.push('./data/TCS_67_04_01_996154.csv')
+    fileName.push('./data/TCS_67_04_01_225257.csv')
+    fileName.push('./data/TCS_67_04_01_738731.csv')
+    fileName.push('./data/TCS_67_04_01_592608.csv')
+    fileName.push('./data/TCS_67_04_01_298989.csv')
+    fileName.push('./data/TCS_67_04_01_530472.csv')
+    fileName.push('./data/TCS_67_04_01_425061.csv')
+    fileName.push('./data/TCS_67_04_01_500778.csv')
+    fileName.push('./data/TCS_67_04_01_171758.csv')
+    fileName.push('./data/TCS_67_04_01_261055.csv')
+    fileName.push('./data/TCS_67_04_01_966856.csv')
+    fileName.push('./data/TCS_67_04_01_321604.csv')
+    fileName.push('./data/TCS_67_04_01_290749.csv')
+    fileName.push('./data/TCS_67_04_01_584765.csv')
+    fileName.push('./data/TCS_67_04_01_588488.csv')
+    fileName.push('./data/TCS_67_04_01_309610.csv')
+    fileName.push('./data/TCS_67_04_01_653798.csv')
+    fileName.push('./data/TCS_67_04_01_654560.csv')
+    fileName.push('./data/TCS_67_04_01_507248.csv')
+    fileName.push('./data/TCS_67_04_01_426038.csv')
+    fileName.push('./data/TCS_67_04_01_871669.csv')
+    fileName.push('./data/TCS_67_04_01_927152.csv')
+
+    //11월
     fileName.push('./data/TCS_67_04_01_270485.csv');
     fileName.push('./data/TCS_67_04_01_328318.csv');
     fileName.push('./data/TCS_67_04_01_383770.csv');
