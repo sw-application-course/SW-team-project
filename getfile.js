@@ -4,6 +4,38 @@ $(document).ready(function (){
     fileName.push('./data/TCS_67_04_01_328318.csv');
     fileName.push('./data/TCS_67_04_01_383770.csv');
 
+    //9월
+    fileName.push('./data/TCS_67_04_01_156407.csv');
+    fileName.push('./data/TCS_67_04_01_168187.csv');
+    fileName.push('./data/TCS_67_04_01_281472.csv');
+    fileName.push('./data/TCS_67_04_01_309396.csv');
+    fileName.push('./data/TCS_67_04_01_311166.csv');
+    fileName.push('./data/TCS_67_04_01_333201.csv');
+    fileName.push('./data/TCS_67_04_01_338297.csv');
+    fileName.push('./data/TCS_67_04_01_410870.csv');
+    fileName.push('./data/TCS_67_04_01_441541.csv');
+    fileName.push('./data/TCS_67_04_01_444105.csv');
+    fileName.push('./data/TCS_67_04_01_472823.csv');
+    fileName.push('./data/TCS_67_04_01_501907.csv');
+    fileName.push('./data/TCS_67_04_01_504898.csv');
+    fileName.push('./data/TCS_67_04_01_563463.csv');
+    fileName.push('./data/TCS_67_04_01_567033.csv');
+    fileName.push('./data/TCS_67_04_01_602618.csv');
+    fileName.push('./data/TCS_67_04_01_612475.csv');
+    fileName.push('./data/TCS_67_04_01_635273.csv');
+    fileName.push('./data/TCS_67_04_01_662434.csv');
+    fileName.push('./data/TCS_67_04_01_729636.csv');
+    fileName.push('./data/TCS_67_04_01_766411.csv');
+    fileName.push('./data/TCS_67_04_01_800256.csv');
+    fileName.push('./data/TCS_67_04_01_814844.csv');
+    fileName.push('./data/TCS_67_04_01_860438.csv');
+    fileName.push('./data/TCS_67_04_01_889156.csv');
+    fileName.push('./data/TCS_67_04_01_900753.csv');
+    fileName.push('./data/TCS_67_04_01_918851.csv');
+    fileName.push('./data/TCS_67_04_01_953856.csv');
+    fileName.push('./data/TCS_67_04_01_978240.csv');
+    fileName.push('./data/TCS_67_04_01_988097.csv');
+    
     //10월 (1일, 21일 데이터없음)
     fileName.push('./data/TCS_67_04_01_694479.csv')
     fileName.push('./data/TCS_67_04_01_600878.csv')
