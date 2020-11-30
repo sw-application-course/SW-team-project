@@ -1,46 +1,39 @@
-let traffic = [];
 let highway = {};
 let fileName = [];
 
-let selected_highway;
-let selected_direction;
+let selected_highway; //고속도로(노선)명
+let selected_direction; //구간(방향문자열)
 let selected_SF_i; //서비스 교통량
 let selected_N; //편도차로수
 let selected_f_W; //차로폭 및 측방여유폭 보정계수
 let selected_f_HV; //중차량 보정계수
 
-$(document).ready(function() {
-  $.ajax({
-    type: "GET",
-    url: "./data/TCS_67_04_01_270485.csv",
-    dataType: "text",
-    contentType: "application/x-www-form-urlencoded; charset=euc-kr",
-    beforeSend: function(jqXHR){
-      jqXHR.overrideMimeType('application/x-www-form-urlencoded;charset=euc-kr');
-    },
-    success: function(data) {
-      processData(data);
-      getNeededValue();
-      putHighway();
-    }
-  });
+$(document).ready(function () {
+
+  for(var i=0; i<3; i++){
+    $.ajax({
+      type: "GET",
+      url: fileName[i],
+      async: false,
+      dataType: "text",
+      contentType: "application/x-www-form-urlencoded; charset=euc-kr",
+      beforeSend: function (jqXHR) {
+        jqXHR.overrideMimeType('application/x-www-form-urlencoded; charset=euc-kr');
+      },
+      success: function (data) {
+        processData(data);
+      }
+    });
+  }
+  
+  getNeededValue();
+  putHighway();
 });
 
-    
+
+//data처리(highway 딕셔너리)
 function processData(allText) {
-  //let traffic_list = [];
-  let current_ammount = 0;
-
   let car = 0;
-  let trafficsum = 0;
-  let line_counter = 0;
-
-  let ex_date; //기준일자
-  let ex_cartype; //TCS차종유형구분코드
-  let ex_highway; //노선명
-  let ex_station; //순번
-  let ex_trafficsum; //교통량
-  let ex_direction; //방향구분코드
 
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(',');
@@ -71,12 +64,12 @@ function processData(allText) {
       traffic[j] = parseInt(traffic[j]);
     }
 
-    ex_date = traffic[0]; //기준일자
-    ex_cartype = traffic[1]; //TCS차종유형구분코드
-    ex_highway = traffic[2]; //노선명
-    ex_station = traffic[3]; //구분(방향문자열)
-    ex_trafficsum = traffic[4]; //교통량
-    ex_direction = traffic[5]; //방향구분코드
+    let ex_date = traffic[0]; //기준일자
+    let ex_cartype = traffic[1]; //TCS차종유형구분코드
+    let ex_highway = traffic[2]; //노선명
+    let ex_station = traffic[3]; //구분(방향문자열)
+    let ex_trafficsum = traffic[4]; //교통량
+    let ex_direction = traffic[5]; //방향구분코드
 
     if (ex_cartype == 1) {
       car = 0; //소형
@@ -92,16 +85,20 @@ function processData(allText) {
     if(!(ex_station in highway[ex_highway])){
       highway[ex_highway][ex_station] = [0,0,0,0,0,0,0];
     }
-    
-    highway[ex_highway][ex_station][car] = ex_trafficsum;
+
+    highway[ex_highway][ex_station][car] += ex_trafficsum;
     ex_trafficsum /= 24; //1일 교통량을 1시간 단위로 나눔
     highway[ex_highway][ex_station][3] += ex_trafficsum;
 
+
   }
+
+  return true;
 }
 
 //service level, Vc_i, MSF_i 구하기
 function getNeededValue() {
+
 
   for(var key1 in highway){
     for(var key2 in highway[key1]){
@@ -143,6 +140,7 @@ function getNeededValue() {
       console.log("<br>");
     }
   }
+ delete highway[Object.keys(highway)[Object.keys(highway).length-1]];
 }
 
 
@@ -184,6 +182,19 @@ function calServiceTraffic(){
   document.getElementById("servicelevel").innerHTML = output_servicelevel;
   document.getElementById("MSF_i").innerHTML = output_MSF_i;
   document.getElementById("SF_i").innerHTML = output_SF_i;
+  document.getElementById("highway").innerHTML = selected_highway;
+  document.getElementById("direction").innerHTML = selected_direction;
+
+
+  if(output_servicelevel == 'A' || output_servicelevel == 'B' ){
+    document.getElementById('ment1').innerHTML = '높고,';
+  }
+  else if(output_servicelevel == 'C'|| output_servicelevel == 'D'){
+    document.getElementById('ment1').innerHTML = '적당하고,';
+  }
+  else{
+    document.getElementById('ment1').innerHTML = '낮고,';
+  }
 
   $("container").load(window.location.href + "container");
 }
