@@ -84,7 +84,7 @@ def getData(filename):
           stations_S[ex_station] = {
             "down": {}
           }
-          stations_S[ex_station]['down'] = [0,0,0,0,0,0,0] #소형, 중형, 대형차 수, 교통량 합, 서비스수준, Vc비, MSF
+        stations_S[ex_station]['down'] = [0,0,0,0,0,0,0] #소형, 중형, 대형차 수, 교통량 합, 서비스수준, Vc비, MSF
         stations_S[ex_station]['down'][car] = [ex_trafficsum]
         stations_S[ex_station]['down'][3] += traffic[4]
         trafficsum = stations_S[ex_station]['down'][3] / 24 #1일 교통량을 1시간 단위로 나눔
